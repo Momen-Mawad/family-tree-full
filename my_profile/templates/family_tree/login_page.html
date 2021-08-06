@@ -1,0 +1,21 @@
+{% extends "family_tree/base.html" %}
+
+    {% block header_block%}
+    <title>Log in page</title>
+    {% endblock %}
+
+    {% block body_block%}
+    <div class="jumbotron">
+        <h1>Please log in</h1>
+        <form action="{% url 'family_tree:login_page' %}" method="POST">
+        {% csrf_token%}
+            <label for="username">Username:</label>
+            <input type="text" name="username" placeholder="Enter Username" id="username">
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password">
+
+            <input type="submit" name="" value="login">
+        </form>
+    </div>
+    {% endblock %}
